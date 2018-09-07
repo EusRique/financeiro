@@ -12,6 +12,8 @@
 */
 
 $this->group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
+
+    $this->get('historic', 'BalanceController@historic')->name('admin.historics');
     
     $this->post('transfer', 'BalanceController@transferStore')->name('transfer.store');
     $this->post('confirm-transfer', 'BalanceController@confirmTransfer')->name('confirm.transfer');
