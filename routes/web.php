@@ -12,6 +12,9 @@
 */
 
 $this->group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
+    $this->post('withdrawn', 'BalanceController@withdrawnStore')->name('withdrawn.store');
+
+    $this->get('withdrawn', 'BalanceController@withdrawn')->name('balance.withdrawn');
     
     $this->post('deposit', 'BalanceController@depositStore')->name('deposit.store');
 
