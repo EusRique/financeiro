@@ -9,6 +9,10 @@ use App\Http\Requests\MoneyValidation;
 
 class BalanceController extends Controller
 {
+    # I => Entrada
+    # O => Saída
+    #
+    
     public function index()
     {
         $balance = auth()->user()->balance;
@@ -39,17 +43,15 @@ class BalanceController extends Controller
             ->with('error', $response['message']);
     }
 
-    public function withdrawn()
+    public function withdraw()
     {
-        return view('admin.balance.withdrawn');
+        return view('admin.balance.withdraw');
     }
 
-    public function withdrawnStore(MoneyValidation $request)
-    {
-        dd($request->all());
-        
+    public function withdrawStore(MoneyValidation $request)
+    {   
         $balance = auth()->user()->balance()->firstOrCreate([]);
-        $response = $balance->deposit($request->value);
+        $response = $balance->withdraw($request->value);
 
         if($response['success']) {
 
