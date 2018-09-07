@@ -13,6 +13,7 @@
 
 $this->group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'admin'], function(){
 
+    $this->any('historic-search', 'BalanceController@searchHistoric')->name('historic.search');
     $this->get('historic', 'BalanceController@historic')->name('admin.historics');
     
     $this->post('transfer', 'BalanceController@transferStore')->name('transfer.store');
