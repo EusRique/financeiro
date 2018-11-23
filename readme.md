@@ -1,3 +1,8 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-## Laravel 5.5
+## Sistema de controle de Saldo financeiro
+
+## Configurações do projeto
+
+composer install </br>
+configurar o arquivo .env
